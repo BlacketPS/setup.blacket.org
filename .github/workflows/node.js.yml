@@ -24,12 +24,6 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Create dist folder
-      run: mkdir dist
-
-    - name: Copy build files to dist folder
-      run: cp -r * dist/
-
     - name: Commit and push changes
       run: |
         git config --local user.email "actions@github.com"
