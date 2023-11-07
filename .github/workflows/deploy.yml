@@ -20,3 +20,11 @@ jobs:
 
     - name: Build
       run: npm run build
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add .
+        git commit -m "Auto-build and commit by GitHub Actions"
+        git push
