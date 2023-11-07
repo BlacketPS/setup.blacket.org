@@ -10,6 +10,13 @@ export default defineConfig({
             "@components": "/src/components"
         }
     },
+    css: {
+        modules: {
+            scopeBehaviour: "local",
+            localsConvention: "camelCaseOnly",
+            generateScopedName: "[name]__[local]___[hash:base64:5]"
+        },
+    },
     build: {
         target: "es2022",
         rollupOptions: {
