@@ -8,5 +8,38 @@ export default defineConfig({
             "@styles": "/src/styles",
             "@components": "/src/components"
         }
+    },
+    build: {
+        target: "es2022",
+        rollupOptions: {
+            output: {
+                manualChunks: (id) => {
+                    if (id.includes("node_modules")) return "vendor";
+                    else return "main";
+                },
+                chunkFileNames: "[name].[hash].js",
+                entryFileNames: "[name].[hash].js",
+                assetFileNames: "[name].[hash].[ext]"
+            },
+        },
+        chunkSizeWarningLimit: 1000,
+        manifest: true,
+        minify: "terser",
+        terserOptions: {
+            format: {
+                comments: false
+            },
+            compress: {
+                sequences: true,
+                booleans: true,
+                loops: true,
+                toplevel: true,
+                unsafe: true,
+                drop_console: true,
+                unsafe_comps: true,
+                passes: 2
+            },
+            module: true
+        }
     }
 });
