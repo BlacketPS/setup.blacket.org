@@ -12,7 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Build and Deploy React app to GitHub Pages
-      uses: omkartapale/react-deployment-gh-pages@v1.0.0
+    - name: Vite Github Pages Deployer
+      uses: skywarth/vite-github-pages-deployer@v1.2.0
