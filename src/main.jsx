@@ -3,6 +3,8 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
 import pages from "./pages";
 
+document.title = "Setup | Blacket";
+
 createRoot(document.getElementById("app")).render(
     <BrowserRouter basename="/">
         <ErrorBoundary fallback="/">
