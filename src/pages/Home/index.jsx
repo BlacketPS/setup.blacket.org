@@ -1,10 +1,3 @@
-import styles from "@styles";
-import Background from "@components/Background";
-
 export default function Home() {
-    return (
-        <>
-            <Background />
-        </>
-    )
+    return <h1>Hello World!</h1>
 }

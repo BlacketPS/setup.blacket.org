@@ -6,5 +6,5 @@ export default function Error({ error }) {
 
     useEffect(() => alert(`${error.error}${error.componentStack}`), []);
 
-    return (<h1 className={styles.error.error}>Something went wrong</h1>)
+    return <h1 className={styles.error.error}>Something went wrong</h1>
 }
