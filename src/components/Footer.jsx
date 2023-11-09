@@ -1,33 +1,23 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { PageContext } from "@stores/page";
+import { pages } from "@stores/pages";
 import styles from "@styles";
 
-const pages = 4;
-
 export default function Footer() {
-    const [page, setPage] = useState(1);
+    const { page, setPage } = useContext(PageContext);
 
-    const pageHandler = (direction) => {
-        if (typeof direction !== "string") throw new Error("direction must be typeof string");
-
-        switch (direction) {
-            case "backwards":
-                if (page - 1 < 1) throw new Error("page cannot be less than 1");
-                else setPage(page - 1);
-                break;
-            case "forwards":
-                if (page + 1 > pages) throw new Error(`page cannot be greater than ${pages}`);
-                else setPage(page + 1);
-                break;
-            default:
-                throw new Error("direction must be either \"backwards\" or \"forwards\"");
-        }
-    }
+    const forwards = () => setPage(page + 1);
+    const backwards = () => setPage(page - 1);
 
     return <div className={styles.all.footer}>
-        <div aria-disabled={page === 1} className={styles.all.footerLeft} onClick={pageHandler.bind(null, "backwards")}>Back</div>
+        <div aria-disabled={page < 2} className={styles.all.footerLeft} onClick={() => {
+            if (page > 1) backwards();
+        }}>Back</div>
 
         <div className={styles.all.footerCenter}>{page} / {pages}</div>
 
-        <div aria-disabled={page === pages} className={styles.all.footerRight} onClick={pageHandler.bind(null, "forwards")}>Next</div>
+        <div aria-disabled={page === pages} className={styles.all.footerRight} onClick={() => {
+            if (page < pages) forwards();
+        }}>Next</div>
     </div>
 }

@@ -1,7 +1,7 @@
 import Error from "./Error";
-import Home from "./Home";
+import Page from "./Page";
 
 export default {
     Error,
-    Home
+    Page
 }
