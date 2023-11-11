@@ -1,7 +1,5 @@
-import Error from "./Error";
-import Page from "./Page";
+import Welcome from "@pages/Welcome";
 
 export default {
-    Error,
-    Page
+    Welcome
 }

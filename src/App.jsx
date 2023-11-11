@@ -6,24 +6,26 @@ import Background from "@components/Background";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import Body from "@components/Body";
-import pages from "@pages";
+import PageHandler from "@handlers/PageHandler";
 
 export default function App() {
-    return <ConfigProvider>
-        <PageProvider>
-            <BrowserRouter basename="/">
-                <ErrorBoundary fallback="/">
-                    <Background />
-                    <Header />
-                    <Body>
-                        <Routes>
-                            <Route path="*" element={<Navigate to="/" />} />
-                            <Route path="/" element={<pages.Page />} />
-                        </Routes>
-                    </Body>
-                    <Footer />
-                </ErrorBoundary >
-            </BrowserRouter>
-        </PageProvider>
-    </ConfigProvider>
+    return (
+        <ErrorBoundary>
+            <ConfigProvider>
+                <PageProvider>
+                    <BrowserRouter>
+                        <Background />
+                        <Header />
+                        <Body>
+                            <Routes>
+                                <Route path="*" element={<Navigate to="/" />} />
+                                <Route path="/" element={<PageHandler />} />
+                            </Routes>
+                        </Body>
+                        <Footer />
+                    </BrowserRouter>
+                </PageProvider>
+            </ConfigProvider>
+        </ErrorBoundary>
+    )
 }

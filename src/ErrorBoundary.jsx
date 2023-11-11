@@ -1,5 +1,4 @@
 import React from "react";
-import pages from "@pages";
 
 export default class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -24,10 +23,13 @@ export default class ErrorBoundary extends React.Component {
     }
 
     render() {
-        if (this.state.error) return <pages.Error error={{
-            error: this.state.error.toString().replace("Error: ", ""),
-            componentStack: this.state.componentStack.toString()
-        }} />;
+        if (this.state.error) {
+            document.title = this.state.error.toString().replace("Error: ", "");
+
+            alert(`${this.state.error.toString().replace("Error: ", "")}${this.state.componentStack.toString()}`)
+
+            return <h1 style={{ marginLeft: "7.8px", color: "#3a3a3a" }}>Something went wrong</h1>
+        }
         return this.props.children;
     }
 }

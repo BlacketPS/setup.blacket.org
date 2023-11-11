@@ -8,7 +8,8 @@ export default defineConfig({
             "@pages": "/src/pages",
             "@styles": "/src/styles",
             "@components": "/src/components",
-            "@stores": "/src/stores"
+            "@stores": "/src/stores",
+            "@handlers": "/src/handlers"
         }
     },
     css: {
