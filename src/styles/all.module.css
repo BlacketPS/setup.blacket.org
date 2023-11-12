@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap");
 
 * {
+    color: var(--accent-color);
     font-smooth: always;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -49,13 +50,27 @@ body {
 }
 
 .regular-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 1.5;
     height: calc(94.5% - 55px);
-    left: 0;
     margin: 0;
     padding: 0;
     position: absolute;
     top: 55px;
     width: 100%;
-    z-index: -1;
-    color: var(--accent-color);
+}
+
+.big-text {
+    font-family: Titan One, sans-serif;
+    font-size: 60px;
+    text-align: center;
+}
+
+.small-text {
+    font-family: Nunito, sans-serif;
+    font-size: 24px;
+    text-align: center;
 }

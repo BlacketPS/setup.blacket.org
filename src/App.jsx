@@ -4,8 +4,8 @@ import { PageProvider } from "@stores/page";
 import ErrorBoundary from "./ErrorBoundary";
 import Background from "@components/Background";
 import Header from "@components/Header";
-import Footer from "@components/Footer";
 import Body from "@components/Body";
+import Footer from "@components/Footer";
 import PageHandler from "@handlers/PageHandler";
 
 export default function App() {

@@ -6,7 +6,7 @@ export default function PageHandler() {
     const { page } = useContext(PageContext);
 
     if (page === 1) return <pages.Welcome />
-    else if (page === 2) return <pages.Welcome />
+    else if (page === 2) return <pages.Information />
     else if (page === 3) return <pages.Welcome />
     else if (page === 4) return <pages.Welcome />
     else if (page === 5) return <pages.Welcome />

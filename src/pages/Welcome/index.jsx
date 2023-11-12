@@ -2,11 +2,13 @@ import styles from "@styles";
 
 export default function Welcome() {
     return (
-        <h1>
-            Welcome to the Blacket Setup!
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </h1>
+        <>
+            <div className={styles.all.bigText}>Welcome to the Blacket Setup!</div>
+            <div className={styles.all.smallText}>
+                This setup will guide you through the process of configuring your Blacket server.
+                <br />
+                Navigate through the setup by using the buttons at the bottom of the page.
+            </div>
+        </>
     )
 }

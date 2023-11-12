@@ -6,17 +6,14 @@
     flex-direction: row;
     height: 55px;
     justify-content: space-between;
-    left: 0;
     overflow: hidden;
     padding-bottom: 6px;
     position: absolute;
     bottom: 0;
     width: 100%;
-    z-index: 10;
 }
 
 .footer-left {
-    color: var(--accent-color);
     cursor: pointer;
     font-family: Nunito, sans-serif;
     font-size: 24px;
@@ -37,7 +34,6 @@
 }
 
 .footer-center {
-    color: var(--accent-color);
     font-family: Titan One, sans-serif;
     font-size: 40px;
     line-height: 55px;
@@ -49,7 +45,6 @@
 }
 
 .footer-right {
-    color: var(--accent-color);
     cursor: pointer;
     font-family: Nunito, sans-serif;
     font-size: 24px;

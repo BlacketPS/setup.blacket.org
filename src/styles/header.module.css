@@ -6,13 +6,9 @@
     flex-direction: row;
     height: 55px;
     justify-content: center;
-    left: 0;
     overflow: hidden;
     padding-bottom: 6px;
-    position: absolute;
-    top: 0;
     width: 100%;
-    z-index: 10;
 }
 
 .header>img {
@@ -22,7 +18,6 @@
 }
 
 .header>div {
-    color: var(--accent-color);
     font-family: Titan One, sans-serif;
     font-size: 35px;
     line-height: 47px;
