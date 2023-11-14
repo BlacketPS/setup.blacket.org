@@ -7,7 +7,16 @@ export function ConfigProvider({ children }) {
         canGoForward: true
     });*/
     const [config, setConfig] = useState({
-        canGoForward: true
+        canGoForward: true,
+        information: {
+            name: "",
+            welcome: "",
+            description: "",
+            pronunciation: {
+                enabled: false,
+                text: ""
+            }
+        }
     });
 
     useEffect(() => localStorage.setItem("config", JSON.stringify(config)), [config]);
