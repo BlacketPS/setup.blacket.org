@@ -3,14 +3,16 @@ import styles from "@styles";
 
 export default function Container({ header, children }) {
     useEffect(() => {
-        if (!header) throw new Error("container header is required");
-        if (typeof header !== "string") throw new Error("container header must be typeof string");
+        if (header && typeof header !== "object") throw new Error("container header must be typeof object");
     }, []);
 
     return (
         <>
             <div className={styles.all.container}>
-                <div className={styles.all.containerHeader}>{header}</div>
+                {header && <>
+                    {header.big && <div className={styles.all.containerHeader}>{header.big}</div>}
+                    {header.small && <div className={styles.all.containerHeaderSmaller}>{header.small}</div>}
+                </>}
                 {children}
             </div>
         </>

@@ -15,17 +15,24 @@ export default function Information() {
 
     return (
         <>
-            <Container header="Information">
-                <Input placeholder="Server Name (*)" type="text" maxLength={32} help={<>
-                    This is the name of your Blacket server instance.
+            <Container header={{
+                big: "Information",
+                small: <>
+                    This is the information that will be displayed on your Blacket server.
+                    <br />
+                    All fields marked with a (*) are required.
+                </>
+            }}>
+                <Input icon="fas fa-signature" placeholder="Server Name (*)" type="text" maxLength={32} help={<>
+                    This is the name of your Blacket server.
                     <br />
                     An example of this would be "Blulet"
                 </>} onInput={e => {
                     config.information.name = e.target.value;
                     setConfig({ ...config });
                 }} value={config.information.name} />
-                <Input placeholder="Welcome Message (*)" type="text" maxLength={32} help={<>
-                    These are the 3 lines on the homepage of your Blacket server instance.
+                <Input icon="fas fa-door-open" placeholder="Welcome Message (*)" type="text" maxLength={32} help={<>
+                    These are the 3 lines on the homepage of your Blacket server.
                     <br />
                     An example of this would be "Blooket but Blue"
                     <br />
@@ -35,8 +42,8 @@ export default function Information() {
                     config.information.welcome = e.target.value;
                     setConfig({ ...config });
                 }} value={config.information.welcome} />
-                <Input placeholder="Welcome Description (*)" type="text" maxLength={96} help={<>
-                    This is the text below the welcome message on the homepage of your Blacket server instance.
+                <Input icon="fas fa-text" placeholder="Welcome Description (*)" type="text" maxLength={96} help={<>
+                    This is the text below the welcome message on the homepage of your Blacket server.
                     <br />
                     An example of this would be "A Blooket private server, created by monkxy written in React"
                     <br />
@@ -54,8 +61,8 @@ export default function Information() {
                     Pronunciation Button
                 </Checkbox>
 
-                {config.information.pronunciation.enabled && <Input placeholder="Pronunciation Button Text (*)" type="text" maxLength={32} help={<>
-                    This is the text next to the pronunciation button on the homepage of your Blacket server instance.
+                {config.information.pronunciation.enabled && <Input icon="fas fa-volume" placeholder="Pronunciation Button Text (*)" type="text" maxLength={32} help={<>
+                    This is the text next to the pronunciation button on the homepage of your Blacket server.
                     <br />
                     An example of this would be "Blue-lit"
                 </>} onChange={e => {
