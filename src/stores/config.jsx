@@ -16,6 +16,13 @@ export function ConfigProvider({ children }) {
                 enabled: false,
                 text: ""
             }
+        },
+        theme: {
+            backgroundColor: null,
+            backgroundBlooks: true,
+            primaryColor: null,
+            secondaryColor: null,
+            accentColor: null
         }
     });
 

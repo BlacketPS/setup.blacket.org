@@ -1,0 +1,5 @@
+.error {
+    margin-left: 7.8px;
+    color: var(--accent-color);
+    cursor: pointer;
+}

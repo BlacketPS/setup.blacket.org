@@ -1,3 +1,3 @@
-const pages = 6;
+const pages = 7;
 
 export { pages };
