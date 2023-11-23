@@ -85,6 +85,89 @@ body {
     align-items: center;
 }
 
+.modal-button-container {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 12.5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.button {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: filter 0.25s;
+    margin: auto;
+}
+
+.button-shadow {
+    background: rgba(0,0,0,.25);
+    transform: translateY(2px);
+    transition: transform .6s cubic-bezier(.3,.7,.4,1);
+}
+
+.button-edge,
+.button-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.button-edge {
+    background: var(--background-color);
+    filter: brightness(0.7);
+}
+
+.button-inside {
+    background: var(--background-color);
+    min-width: 100px;
+    height: 35px;
+    font-size: 22px;
+    padding: 5px 15px;
+    color: var(--accent-color);
+    border-radius: 5px;
+    font-weight: 700;
+    text-shadow: 0 1.5px rgba(0,0,0,.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button:hover {
+    filter: brightness(110%);
+}
+
+.button:hover .button-inside {
+    transform: translateY(-0.313vw);
+    transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button:active .button-inside {
+    transform: translateY(-0.104vw);
+    transition: transform 34ms;
+}
+
+.button:hover .button-shadow {
+    transform: translateY(0.208vw);
+    transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.button:active .button-shadow {
+    transform: translateY(0.052vw);
+    transition: transform 34ms;
+}
+
 .big-text {
     font-family: Titan One, sans-serif;
     font-size: 60px;
@@ -104,6 +187,8 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     left: 50%;
     max-width: 550px;
     padding-bottom: 7px;
