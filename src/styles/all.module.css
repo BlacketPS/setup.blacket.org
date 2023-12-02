@@ -102,14 +102,14 @@ body {
     user-select: none;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
-    transition: filter 0.25s;
+    transition: filter .25s;
     margin: auto;
 }
 
 .button-shadow {
-    background: rgba(0,0,0,.25);
+    background: rgba(0, 0, 0, .25);
     transform: translateY(2px);
-    transition: transform .6s cubic-bezier(.3,.7,.4,1);
+    transition: transform .6s cubic-bezier(.3, .7, .4, 1);
 }
 
 .button-edge,
@@ -137,11 +137,13 @@ body {
     color: var(--accent-color);
     border-radius: 5px;
     font-weight: 700;
-    text-shadow: 0 1.5px rgba(0,0,0,.2);
+    text-shadow: 0 1.5px rgba(0, 0, 0, .2);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transform: translateY(-4px);
+    transition: transform .6s cubic-bezier(.3, .7, .4, 1);
 }
 
 .button:hover {
@@ -149,22 +151,22 @@ body {
 }
 
 .button:hover .button-inside {
-    transform: translateY(-0.313vw);
+    transform: translateY(-6px);
     transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 
 .button:active .button-inside {
-    transform: translateY(-0.104vw);
+    transform: translateY(-2px);
     transition: transform 34ms;
 }
 
 .button:hover .button-shadow {
-    transform: translateY(0.208vw);
+    transform: translateY(4px);
     transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 
 .button:active .button-shadow {
-    transform: translateY(0.052vw);
+    transform: translateY(1px);
     transition: transform 34ms;
 }
 
@@ -280,6 +282,26 @@ body {
     -webkit-user-select: none;
     user-select: none;
     width: 22px;
+}
+
+.select {
+    font-size: 20px;
+    font-family: Nunito, sans-serif;
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    border: 3px solid rgba(0, 0, 0, 0.17);
+    border-radius: 6px;
+    padding: 3px 20px;
+    outline: none;
+    margin: auto auto 15px;
+}
+
+.select-icon {
+    color: var(--accent-color);
+    font-size: 25px;
+    position: relative;
+    bottom: 2px;
+    left: 5px;
 }
 
 .checkbox-container {

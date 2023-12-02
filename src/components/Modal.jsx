@@ -12,7 +12,7 @@ export default function Modal({ header, children, buttons }) {
     return (
         <>
             <div className={styles.all.modal}>
-                <Container {...header}>
+                <Container header={header}>
                     {children}
                     {buttons && <div className={styles.all.modalButtonContainer}>
                         {buttons.map((button, i) => <Button key={i} onClick={button.onClick} disabled={button.disabled}>

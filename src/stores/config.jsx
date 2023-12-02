@@ -23,6 +23,23 @@ export function ConfigProvider({ children }) {
             primaryColor: null,
             secondaryColor: null,
             accentColor: null
+        },
+        database: {
+            type: "",
+            host: "",
+            port: "",
+            name: "",
+            username: "",
+            password: {
+                enabled: false,
+                value: ""
+            }
+        },
+        paypal: {
+            enabled: false,
+            mode: "sandbox",
+            clientID: "",
+            clientSecret: ""
         }
     });
 

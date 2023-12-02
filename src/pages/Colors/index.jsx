@@ -5,7 +5,6 @@ import Container from "@components/Container";
 import Input from "@components/Input";
 import Modal from "@components/Modal";
 import Checkbox from "@components/Checkbox";
-import styles from "@styles";
 
 export default function Theme() {
     const { config, setConfig } = useContext(ConfigContext);
@@ -29,7 +28,7 @@ export default function Theme() {
 
                 <Input onMouseDown={() => openModal("background")} icon="fas fa-palette" placeholder="Background Color" help={<>
                     The background color of elements.
-                </>} value={config.theme.backgroundColor} />
+                </>} value={config.theme.backgroundColor || ""} />
 
                 <Checkbox checked={config.theme.backgroundBlooks} onClick={() => {
                     config.theme.backgroundBlooks = !config.theme.backgroundBlooks;
@@ -40,15 +39,15 @@ export default function Theme() {
 
                 <Input onMouseDown={() => openModal("primary")} icon="fas fa-palette" placeholder="Primary Color" help={<>
                     The primary color of elements (mainly used for containers)
-                </>} value={config.theme.primaryColor} />
+                </>} value={config.theme.primaryColor || ""} />
 
                 <Input onMouseDown={() => openModal("secondary")} icon="fas fa-palette" placeholder="Secondary Color" help={<>
                     The secondary color of elements (mainly used for hover effects)
-                </>} value={config.theme.secondaryColor} />
+                </>} value={config.theme.secondaryColor || ""} />
 
                 <Input onMouseDown={() => openModal("accent")} icon="fas fa-palette" placeholder="Accent Color" help={<>
                     The accent color on all pages (used for text)
-                </>} value={config.theme.accentColor} />
+                </>} value={config.theme.accentColor || ""} />
 
             </Container>
 
