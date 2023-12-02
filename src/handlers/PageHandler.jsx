@@ -10,7 +10,7 @@ export default function PageHandler() {
     else if (page === 3) return <pages.Theme />
     else if (page === 4) return <pages.Database />
     else if (page === 5) return <pages.PayPal />
-    else if (page === 6) return <pages.Welcome />
-    else if (page === 7) return <pages.Welcome />
+    else if (page === 6) return <pages.Miscellaneous />
+    else if (page === 7) return <pages.Finalize />
     else throw new Error(`page ${page} does not exist`);
 }

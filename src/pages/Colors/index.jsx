@@ -81,7 +81,6 @@ export default function Theme() {
                     else if (modal === "accent") config.theme.accentColor = color;
                     setConfig({ ...config });
                 }} />
-
             </Modal>}
         </>
     )
