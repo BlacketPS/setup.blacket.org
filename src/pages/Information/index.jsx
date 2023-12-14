@@ -42,7 +42,7 @@ export default function Information() {
                     config.information_welcome = e.target.value;
                     setConfig({ ...config });
                 }} value={config.information_welcome} />
-                <Input icon="fas fa-text" placeholder="Welcome Description (*)" type="text" maxLength={96} help={<>
+                <Input icon="fas fa-text" placeholder="Welcome Description (*)" type="text" maxLength={128} help={<>
                     This is the text below the welcome message on the homepage of your Blacket server.
                     <br />
                     An example of this would be "A Blooket private server, created by monkxy written in React"
