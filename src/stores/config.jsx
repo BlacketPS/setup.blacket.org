@@ -5,49 +5,40 @@ export const ConfigContext = createContext();
 export function ConfigProvider({ children }) {
     const [config, setConfig] = useState(JSON.parse(localStorage.getItem("config")) || {
         canGoForward: true,
-        information: {
-            name: "",
-            welcome: "",
-            description: "",
-            pronunciation: {
-                enabled: false,
-                text: ""
-            }
-        },
-        theme: {
-            backgroundColor: null,
-            backgroundBlooks: true,
-            primaryColor: null,
-            secondaryColor: null,
-            accentColor: null
-        },
-        database: {
-            type: "",
-            host: "",
-            port: "",
-            name: "",
-            username: "",
-            password: {
-                enabled: false,
-                value: ""
-            }
-        },
-        paypal: {
-            enabled: false,
-            mode: "sandbox",
-            clientID: "",
-            clientSecret: ""
-        },
-        miscellaneous: {
-            server_port: 3000,
-            discord_invite: "",
-            verbose_logging: false,
-            block_proxies: false,
-            allow_multiple_accounts: false,
-            backup_enabled: false,
-            backup_interval: 288000000,
-            level_difficulty: 0.75
-        }
+        
+        information_name: "",
+        information_welcome: "",
+        information_description: "",
+        information_pronunciation_enabled: false,
+        information_pronunciation: "",
+
+        theme_background_color: null,
+        theme_background_blooks: true,
+        theme_primary_color: null,
+        theme_secondary_color: null,
+        theme_accent_color: null,
+
+        database_type: "",
+        database_host: "",
+        database_port: "",
+        database_name: "",
+        database_username: "",
+        database_password_enabled: false,
+        database_password: "",
+
+        paypal_enabled: false,
+        paypal_mode: "sandbox",
+        paypal_client_id: "",
+        paypal_client_secret: "",
+
+        miscellaneous_server_port: 3000,
+        miscellaneous_discord_invite: "",
+        miscellaneous_verbose_logging: false,
+        miscellaneous_block_proxies: false,
+        miscellaneous_allow_multiple_accounts: false,
+        miscellaneous_backup_enabled: false,
+        miscellaneous_backup_interval: 288000000,
+        miscellaneous_level_difficulty: 0.75
     });
 
     useEffect(() => localStorage.setItem("config", JSON.stringify(config)), [config]);

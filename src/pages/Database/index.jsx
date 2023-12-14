@@ -8,9 +8,9 @@ import Checkbox from "@components/Checkbox";
 export default function Information() {
     const { config, setConfig } = useContext(ConfigContext);
 
-    const values = [config.database.type];
-    if (!["", "sqlite"].includes(config.database.type)) values.push(config.database.username);
-    if (config.database.password.enabled) values.push(config.database.password.value);
+    const values = [config.database_type];
+    if (!["", "sqlite"].includes(config.database_type)) values.push(config.database_username);
+    if (config.database_password_enabled) values.push(config.database_password);
 
     config.canGoForward = values.every(value => value !== "");
     setConfig(config);
@@ -45,53 +45,53 @@ export default function Information() {
                 }, {
                     value: "oracle",
                     text: "Oracle Database"
-                }]} value={config.database.type} onChange={(e) => {
-                    config.database.type = e.target.value;
+                }]} value={config.database_type} onChange={(e) => {
+                    config.database_type = e.target.value;
                     setConfig({ ...config });
                 }} />
 
-                {!["", "sqlite"].includes(config.database.type) && <>
+                {!["", "sqlite"].includes(config.database_type) && <>
                     <Input icon="fas fa-cloud" placeholder="Database Host" help={<>
                         The host of the database. If you don't specify a host, <code>localhost</code> will be used.
                     </>} onChange={(e) => {
-                        config.database.host = e.target.value;
+                        config.database_host = e.target.value;
                         setConfig({ ...config });
-                    }} value={config.database.host || ""} />
+                    }} value={config.database_host || ""} />
 
                     <Input icon="fas fa-colon" placeholder="Database Port" help={<>
                         The port of the database. If you don't specify a port, the default port for the database will be used.
                     </>} onChange={(e) => {
-                        config.database.port = e.target.value;
+                        config.database_port = e.target.value;
                         setConfig({ ...config });
-                    }} value={config.database.port || ""} />
+                    }} value={config.database_port || ""} />
 
                     <Input icon="fas fa-signature" placeholder="Database Name" help={<>
                         The name of the database. If you don't specify a name, <code>blacket</code> will be used.
                     </>} onChange={(e) => {
-                        config.database.name = e.target.value;
+                        config.database_name = e.target.value;
                         setConfig({ ...config });
-                    }} value={config.database.name || ""} />
+                    }} value={config.database_name || ""} />
 
                     <Input icon="fas fa-user" placeholder="Database Username (*)" help={<>
                         The username of the user to use for the database. This user must have access to the database.
                     </>} onChange={(e) => {
-                        config.database.username = e.target.value;
+                        config.database_username = e.target.value;
                         setConfig({ ...config });
-                    }} value={config.database.username || ""} />
+                    }} value={config.database_username || ""} />
 
-                    <Checkbox checked={config.database.password.enabled} onClick={() => {
-                        config.database.password.enabled = !config.database.password.enabled;
+                    <Checkbox checked={config.database_password_enabled} onClick={() => {
+                        config.database_password_enabled = !config.database_password_enabled;
                         setConfig({ ...config });
                     }}>
                         Use Database Password
                     </Checkbox>
 
-                    {config.database.password.enabled && <Input icon="fas fa-key" placeholder="Database Password (*)" help={<>
+                    {config.database_password_enabled && <Input icon="fas fa-key" placeholder="Database Password (*)" help={<>
                         The password of the user.
                     </>} onChange={(e) => {
-                        config.database.password.value = e.target.value;
+                        config.database_password = e.target.value;
                         setConfig({ ...config });
-                    }} type="password" value={config.database.password.value || ""} />}
+                    }} type="password" value={config.database_password || ""} />}
                 </>}
 
             </Container>

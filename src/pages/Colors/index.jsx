@@ -28,10 +28,10 @@ export default function Theme() {
 
                 <Input onMouseDown={() => openModal("background")} icon="fas fa-palette" placeholder="Background Color" help={<>
                     The background color of elements.
-                </>} value={config.theme.backgroundColor || ""} />
+                </>} value={config.theme_background_color || ""} />
 
-                <Checkbox checked={config.theme.backgroundBlooks} onClick={() => {
-                    config.theme.backgroundBlooks = !config.theme.backgroundBlooks;
+                <Checkbox checked={config.theme_background_blooks} onClick={() => {
+                    config.theme_background_blooks = !config.theme_background_blooks;
                     setConfig({ ...config });
                 }}>
                     Background Blooks
@@ -39,15 +39,15 @@ export default function Theme() {
 
                 <Input onMouseDown={() => openModal("primary")} icon="fas fa-palette" placeholder="Primary Color" help={<>
                     The primary color of elements (mainly used for containers)
-                </>} value={config.theme.primaryColor || ""} />
+                </>} value={config.theme_primary_color || ""} />
 
                 <Input onMouseDown={() => openModal("secondary")} icon="fas fa-palette" placeholder="Secondary Color" help={<>
                     The secondary color of elements (mainly used for hover effects)
-                </>} value={config.theme.secondaryColor || ""} />
+                </>} value={config.theme_secondary_color || ""} />
 
                 <Input onMouseDown={() => openModal("accent")} icon="fas fa-palette" placeholder="Accent Color" help={<>
                     The accent color on all pages (used for text)
-                </>} value={config.theme.accentColor || ""} />
+                </>} value={config.theme_accent_color || ""} />
 
             </Container>
 
@@ -62,23 +62,23 @@ export default function Theme() {
             }, {
                 text: "Reset",
                 onClick: () => {
-                    if (modal === "background") config.theme.backgroundColor = null;
-                    else if (modal === "primary") config.theme.primaryColor = null;
-                    else if (modal === "secondary") config.theme.secondaryColor = null;
-                    else if (modal === "accent") config.theme.accentColor = null;
+                    if (modal === "background") config.theme_background_color = null;
+                    else if (modal === "primary") config.theme_primary_color = null;
+                    else if (modal === "secondary") config.theme_secondary_color = null;
+                    else if (modal === "accent") config.theme_accent_color = null;
                     setConfig({ ...config });
                 }
             }]}>
                 <HexColorPicker color={
-                    modal === "background" ? config.theme.backgroundColor || "#2f2f2f" :
-                        modal === "primary" ? config.theme.primaryColor || "#1f1f1f" :
-                            modal === "secondary" ? config.theme.secondaryColor || "#3f3f3f" :
-                                modal === "accent" ? config.theme.accentColor || "#ffffff" : null
+                    modal === "background" ? config.theme_background_color || "#2f2f2f" :
+                        modal === "primary" ? config.theme_primary_color || "#1f1f1f" :
+                            modal === "secondary" ? config.theme_secondary_color || "#3f3f3f" :
+                                modal === "accent" ? config.theme_accent_color || "#ffffff" : null
                 } onChange={color => {
-                    if (modal === "background") config.theme.backgroundColor = color;
-                    else if (modal === "primary") config.theme.primaryColor = color;
-                    else if (modal === "secondary") config.theme.secondaryColor = color;
-                    else if (modal === "accent") config.theme.accentColor = color;
+                    if (modal === "background") config.theme_background_color = color;
+                    else if (modal === "primary") config.theme_primary_color = color;
+                    else if (modal === "secondary") config.theme_secondary_color = color;
+                    else if (modal === "accent") config.theme_accent_color = color;
                     setConfig({ ...config });
                 }} />
             </Modal>}

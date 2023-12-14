@@ -7,8 +7,8 @@ import Checkbox from "@components/Checkbox";
 export default function Information() {
     const { config, setConfig } = useContext(ConfigContext);
 
-    const values = [config.information.name, config.information.welcome, config.information.description];
-    if (config.information.pronunciation.enabled) values.push(config.information.pronunciation.text);
+    const values = [config.information_name, config.information_welcome, config.information_description];
+    if (config.information_pronunciation_enabled) values.push(config.information_pronunciation);
 
     config.canGoForward = values.every(value => value !== "");
     setConfig(config);
@@ -28,9 +28,9 @@ export default function Information() {
                     <br />
                     An example of this would be "Blulet"
                 </>} onInput={e => {
-                    config.information.name = e.target.value;
+                    config.information_name = e.target.value;
                     setConfig({ ...config });
-                }} value={config.information.name} />
+                }} value={config.information_name} />
                 <Input icon="fas fa-door-open" placeholder="Welcome Message (*)" type="text" maxLength={32} help={<>
                     These are the 3 lines on the homepage of your Blacket server.
                     <br />
@@ -39,9 +39,9 @@ export default function Information() {
                     <br />
                     Each space counts as a new line so make sure to keep it short and sweet.
                 </>} onChange={e => {
-                    config.information.welcome = e.target.value;
+                    config.information_welcome = e.target.value;
                     setConfig({ ...config });
-                }} value={config.information.welcome} />
+                }} value={config.information_welcome} />
                 <Input icon="fas fa-text" placeholder="Welcome Description (*)" type="text" maxLength={96} help={<>
                     This is the text below the welcome message on the homepage of your Blacket server.
                     <br />
@@ -50,25 +50,25 @@ export default function Information() {
                     <br />
                     Each comma counts as a new line so make sure to keep it short and sweet.
                 </>} onChange={e => {
-                    config.information.description = e.target.value;
+                    config.information_description = e.target.value;
                     setConfig({ ...config });
-                }} value={config.information.description} />
+                }} value={config.information_description} />
 
-                <Checkbox checked={config.information.pronunciation.enabled} onClick={() => {
-                    config.information.pronunciation.enabled = !config.information.pronunciation.enabled;
+                <Checkbox checked={config.information_pronunciation_enabled} onClick={() => {
+                    config.information_pronunciation_enabled = !config.information_pronunciation_enabled;
                     setConfig({ ...config });
                 }}>
                     Pronunciation Button
                 </Checkbox>
 
-                {config.information.pronunciation.enabled && <Input icon="fas fa-volume" placeholder="Pronunciation Button Text (*)" type="text" maxLength={32} help={<>
+                {config.information_pronunciation_enabled && <Input icon="fas fa-volume" placeholder="Pronunciation Button Text (*)" type="text" maxLength={32} help={<>
                     This is the text next to the pronunciation button on the homepage of your Blacket server.
                     <br />
                     An example of this would be "Blue-lit"
                 </>} onChange={e => {
-                    config.information.pronunciation.text = e.target.value;
+                    config.information_pronunciation = e.target.value;
                     setConfig({ ...config });
-                }} value={config.information.pronunciation.text} />}
+                }} value={config.information_pronunciation} />}
             </Container>
         </>
     )

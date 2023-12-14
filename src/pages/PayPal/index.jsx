@@ -9,7 +9,7 @@ export default function PayPal() {
     const { config, setConfig } = useContext(ConfigContext);
 
     const values = [];
-    if (config.paypal.enabled) values.push(config.paypal.clientID, config.paypal.clientSecret);
+    if (config.paypal_enabled) values.push(config.paypal_client_id, config.paypal_client_secret);
 
     config.canGoForward = values.every(value => value !== "");
     setConfig(config);
@@ -23,38 +23,38 @@ export default function PayPal() {
                 </>
             }}>
 
-                <Checkbox checked={config.paypal.enabled} onClick={() => {
-                    config.paypal.enabled = !config.paypal.enabled;
+                <Checkbox checked={config.paypal_enabled} onClick={() => {
+                    config.paypal_enabled = !config.paypal_enabled;
                     setConfig({ ...config });
                 }}>
-                    Monetize {config.information.name}
+                    Monetize {config.information_name}
                 </Checkbox>
 
-                {config.paypal.enabled && <>
+                {config.paypal_enabled && <>
                     <Select options={[{
                         value: "sandbox",
                         text: "Mode: Sandbox"
                     }, {
                         value: "live",
                         text: "Mode: Live"
-                    }]} value={config.paypal.mode} onChange={(e) => {
-                        config.paypal.mode = e.target.value;
+                    }]} value={config.paypal_mode} onChange={(e) => {
+                        config.paypal_mode = e.target.value;
                         setConfig({ ...config });
                     }} />
 
                     <Input icon="fas fa-key" placeholder="Client ID (*)" help={<>
                         This is the client ID of your PayPal application.
                     </>} onChange={(e) => {
-                        config.paypal.clientID = e.target.value;
+                        config.paypal_client_id = e.target.value;
                         setConfig({ ...config });
-                    }} value={config.paypal.clientID || ""} />
+                    }} value={config.paypal_client_id || ""} />
 
                     <Input icon="fas fa-key" placeholder="Client Secret (*)" help={<>
                         This is the client secret of your PayPal application.
                     </>} onChange={(e) => {
-                        config.paypal.clientSecret = e.target.value;
+                        config.paypal_client_secret = e.target.value;
                         setConfig({ ...config });
-                    }} type="password" value={config.paypal.clientSecret || ""} />
+                    }} type="password" value={config.paypal_client_secret || ""} />
                 </>}
 
             </Container>
